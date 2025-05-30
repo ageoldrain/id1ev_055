@@ -1,9 +1,17 @@
-{{ block title }}{{ endblock }}
-{{ block content }}
+{% extends "global/Page.html" %}
+{% load otree static %}
 
-    {{ include_sibling 'Instructions.html' }}
+{% block title %}
+  Welcome
+{% endblock %}
 
-     <div class="d-flex justify-content-center">
-      {{ next_button }}
-    </div>
-{{ endblock }}
+{% block content %}
+
+  {# This will pull in your Instructions.html content exactly once #}
+  {% include_sibling "Instructions.html" %}
+
+  <div class="d-flex justify-content-center mt-4">
+    {{ next_button }}
+  </div>
+
+{% endblock %}

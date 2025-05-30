@@ -30,6 +30,12 @@ class Player(BasePlayer):
     chosen_coin = models.StringField()
     fair_coin_value = models.CurrencyField()
     biased_coin_value = models.CurrencyField()
+
+    prolific_id = models.StringField(
+        label="Please enter your unique Prolific ID here:",
+        blank=False,
+        max_length=100,
+    )
     
     signature = models.StringField(
         label="Please sign (type your full name here)",

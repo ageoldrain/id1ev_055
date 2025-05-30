@@ -1,4 +1,8 @@
 
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block content %}
 <div class="card bg-light m-3">
     <div class="card-body">
     <h2>Welcome to the Study!</h2>
@@ -16,6 +20,28 @@
   <p>
     After you complete the thirteen rounds of the experiment, there will be two reflection questions. 
   </p>
+
+    <form method="post">
+      {{ formfields }}
+      <div class="mb-4">
+        <label for="id_prolific_id" class="form-label">
+          Please enter your unique Prolific ID here:
+        </label>
+        <input
+          type="text"
+          id="id_prolific_id"
+          name="prolific_id"
+          required
+          maxlength="100"
+          class="form-control"
+        >
+      </div>
+      <div class="d-flex justify-content-center">
+        {{ next_button }}
+      </div>
+    </form>
       
     </div>
 </div>
+{% endblock %}
+

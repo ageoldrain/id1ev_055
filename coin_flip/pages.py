@@ -11,6 +11,9 @@ P_BIASED = 0.95
 # Introduction
 # ──────────────────────────────────────────────────────────────────────────────
 class Introduction(Page):
+    form_model = 'player'
+    form_fields = ['prolific_id']
+
     def is_displayed(self):
         return self.round_number == 1
 
